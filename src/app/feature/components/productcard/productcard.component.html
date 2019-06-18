@@ -1,0 +1,25 @@
+<mat-card class="card-cart">
+  <div class="left">
+    <img mat-card-image [src]="product.url" />
+  </div>
+  <div class="center">
+    <div class="center-item">
+      <b>{{ product.variation + " " + product.name | uppercase }}</b>
+    </div>
+    <div class="center-item">Style #: {{ product.style }}</div>
+    <div class="center-item">Colour:{{ product.selectedColor.name }}</div>
+    <div class="center-buttons">
+      <button mat-button (click)="editProd(product.id)">Edit</button>
+      <button mat-button>Remove</button>
+      <button mat-button>Save For Later</button>
+    </div>
+  </div>
+  <div class="right">
+    <div class="right-item">{{ product.selectedSize.code | uppercase }}</div>
+    <div class="right-item">{{ product.quantity }}</div>
+    <div class="right-item">
+      {{ product.currency + product.originalPrice }}
+    </div>
+  </div>
+</mat-card>
+<mat-divider></mat-divider>

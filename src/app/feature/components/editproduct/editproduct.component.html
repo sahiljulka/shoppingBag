@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="left">
+    <div>{{ product.name | uppercase }}</div>
+    <h1>{{ product.currency + product.price }}</h1>
+    <mat-form-field>
+      <mat-label>{{ product.selectedSize.name }}</mat-label>
+      <mat-select [(ngModel)]="product.selectedSize">
+        <mat-option
+          *ngFor="let size of product.availableOptions.sizes"
+          [value]="size"
+        >
+          {{ size.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        [(ngModel)]="product.quantity"
+        matInput
+        placeholder="Qty"
+        type="number"
+      />
+    </mat-form-field>
+    <button mat-button [mat-dialog-close]="product">Edit</button>
+  </div>
+  <div class="right">
+    <img [src]="product.url" />
+  </div>
+</div>

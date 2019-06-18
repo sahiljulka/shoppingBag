@@ -1,0 +1,19 @@
+<mat-divider></mat-divider>
+<div class="container">
+  <h5 class="left"></h5>
+  <h5 class="center">{{ quantity }} Items</h5>
+  <h5 class="right">
+    <div class="right-size">SIZE</div>
+    <div class="right-qty">QTY</div>
+    <div class="right-price">PRICE</div>
+  </h5>
+</div>
+<mat-divider></mat-divider>
+<app-productcard
+  *ngFor="let product of (productItems$ | async)"
+  [product]="product"
+  (editProduct)="editProd($event)"
+>
+</app-productcard>
+
+<app-ordersummary></app-ordersummary>

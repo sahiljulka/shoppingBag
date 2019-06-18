@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  .left {
+    flex: 2;
+  }
+  .center {
+    flex: 5;
+  }
+  .right {
+    flex: 3;
+    display: flex;
+    .right-size,
+    .right-qty,
+    .right-price {
+      flex: 1;
+    }
+  }
+}

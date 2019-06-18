@@ -1,0 +1,58 @@
+<div class="order-container">
+  <div class="left">
+    Need help or any questions ?
+    <br />
+    Call customer service at 19800-32193-219-3123
+    <br />
+    Chat with one of the stylists
+    <br />
+    See return & exchange policy
+  </div>
+  <div class="right">
+    <div>
+      <b>ENTER PROMOTION CODE OR GIFT CARD</b>
+      <mat-form-field>
+        <input matInput type="text" #code />
+      </mat-form-field>
+      <button mat-button (click)="onPromotionCodeApply(code.value)">
+        Apply
+      </button>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="right-box">
+      <div class="right-captions">
+        <h4>
+          SUBTOTAL
+        </h4>
+        <h5>
+          PROMOTION CODE ( IF JF10 APPLIED )
+        </h5>
+        <h5>
+          ESITMATED SHIPPING*
+        </h5>
+        <h5>
+          ADDITIONAL DISCOUNT
+        </h5>
+        <h2>
+          ESTIMATED TOTAL
+        </h2>
+      </div>
+      <div class="right-values">
+        <h4>
+          {{ currency + subtotal }}
+        </h4>
+        <h5>{{ currency + discount }}</h5>
+        <h5>
+          {{ currency + shippingCharges }}
+        </h5>
+        <h5>
+          {{ currency + additionalDiscount }}
+        </h5>
+        <h2>
+          {{ currency + total }}
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
